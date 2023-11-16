@@ -1,11 +1,17 @@
-const http = require('http');
-const hostname = '127.0.0.1';
-const port = 3000;
-const server = http.createServer((req, res) => {
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'text/plain');
-    res.end('Hello World\n');
-});
-server.listen(port, hostname, () => {
-    console.log(`Server running at http://${hostname}:${port}/`);
-});
+
+const express = require('express')
+const path = require('path');//require path to get to folder
+const app = express()
+const port = 8081
+
+app.set('views', path.join(__dirname, 'views'));// use dirname to let nodejs understand the direction
+
+app.set('view engine', 'ejs');
+
+app.get('/', (req, res) => {
+    res.render('./sample.ejs')
+})
+
+app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`)
+})
