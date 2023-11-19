@@ -1,11 +1,8 @@
+const { getBach, getHuy } = require('../controllers/homeController.js')
 const express = require('express');
 const router = express.Router();
-
-router.get('/', (req, res) => {
-    res.render('Hello')
-});
-router.get('/huy', (req, res) => {
-    res.render('sample.ejs')
-});
+// router.Method('/route',handler)
+router.get('/bach', getBach);
+router.get('/huy', getHuy);
 
 module.exports = router; // export default
