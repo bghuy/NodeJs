@@ -1,0 +1,56 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create User</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <ul>
+      <li><a href="/" class="active">Home</a></li>
+      <li><a href="/create">Create user</a></li>
+    </ul>
+
+    <!-- <form action="/create-user" method="post">
+      <fieldset>
+        <legend>Personalia:</legend>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" /><br /><br />
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" /><br /><br />
+        <label for="city">city:</label>
+        <input type="text" id="city" name="city" /><br /><br />
+        <button type="submit">Save</button>
+      </fieldset>
+    </form> -->
+
+    <div class="user-list">
+      <!-- <%= JSON.stringify(listUsers) %> -->
+      <h2>List users</h2>
+      <table>
+        <tr>
+          <th>ID</th>
+          <th>Email</th>
+          <th>Name</th>
+          <th>City</th>
+          <th>Actions</th>
+        </tr>
+        <!-- <% for(var i=0; i<listUsers.length; i++) {%>
+          
+        <% } %> -->
+        <% listUsers.forEach(function(user) { %>
+        <tr>
+          <td><%=user.id%></td>
+          <td><%=user.email%></td>
+          <td><%=user.name%></td>
+          <td><%=user.city%></td>
+          <td>
+            <button>Edit</button>
+            <button>Delete</button>
+          </td>
+        </tr>
+        <% }); %>
+      </table>
+    </div>
+  </body>
+</html>
